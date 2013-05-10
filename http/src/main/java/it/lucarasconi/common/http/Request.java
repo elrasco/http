@@ -25,7 +25,7 @@ public class Request implements Serializable {
 	
 	String charset = "UTF-8";
 	int readTimeout = 10000;
-	int connTimeout = 1000;
+	int connTimeout = 1000; 
 	
 	private final Map<String, List<String>> parameters = new HashMap<String, List<String>>();
 	private final Map<String, String> headers = new HashMap<String, String>();
