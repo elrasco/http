@@ -16,7 +16,6 @@ public class Response implements Serializable{
 	public String getContent() {
 		return content;
 	}
-	
 
 	public int getStatus() {
 		return status;
