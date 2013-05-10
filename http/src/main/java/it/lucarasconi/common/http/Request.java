@@ -53,6 +53,7 @@ public class Request implements Serializable {
 	
 	public Request() {
 		this.parameters.clear();
+		
 	}
 	
 	public Response get() throws IOException {
