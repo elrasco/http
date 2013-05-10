@@ -119,6 +119,7 @@ public class Request implements Serializable {
 		if (name == null || value == null) {
 			return;
 		}
+		name = name.trim();
 		if (parameters.get(name) == null) {
 			parameters.put(name, new ArrayList<String>());
 		} 
