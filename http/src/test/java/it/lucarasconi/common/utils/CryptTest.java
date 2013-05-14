@@ -36,17 +36,11 @@ public class CryptTest {
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
-		
 	}
 
 	@Test
 	public void testDecrypt() {
-		try {
-			Crypt.decrypt(Crypt.encrypt("benvenuti èèè @@@@ in questo fantastico mondo"));
-			assertTrue(true);
-		} catch (Exception e) {
-			fail(e.getMessage());
-		}
+		testEncrypt();
 	}
 
 }
