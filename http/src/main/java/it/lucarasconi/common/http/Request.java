@@ -35,6 +35,11 @@ public class Request implements Serializable {
 		this.uri = uri;
 	}
 	
+	/**
+	 * Usata per mantenere i cookie di una richiesta precedente. Per esempio nel caso si voglia mantenere la sessione
+	 * @param uri
+	 * @param request
+	 */
 	public Request(String uri, Request request) {
 		this.uri = uri;
 		this.cookies = request.getCookies();
