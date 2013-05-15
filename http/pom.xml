@@ -13,8 +13,19 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  
+  <repositories>
+    <repository>
+      <id>oss-sonatype-snapshots</id>
+      <name>OSS Sonatype Snapshots Repository</name>
+	  <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>false</releases>
+      <snapshots>true</snapshots>
+    </repository>
+  </repositories> 
 
   <dependencies>
+     
     
     <dependency>
       <groupId>junit</groupId>

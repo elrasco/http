@@ -12,5 +12,43 @@ public class MyUtils {
                         value.equalsIgnoreCase("yes") ||
                         value.equalsIgnoreCase("on"));
     }
+	
+	public static Boolean onlyOneOf(Object[] params) throws IllegalArgumentException {
+		boolean check = false;
+		for (Object p : params) {
+			if (p != null) {
+				if (check) {
+					throw new IllegalArgumentException( String.format("only one element must be not empty"));
+				}
+				if (p instanceof String) {
+					if (((String)p).length() > 0) {
+						check = true;
+					}
+				} else {
+					check = true;
+				}
+				
+			}
+		}
+		if (!check) {
+			throw new IllegalArgumentException("all parameters cant't be empty");
+		}
+		return new Boolean(check);
+	}
+
+	public static void notEmpty(Object[] params) throws IllegalArgumentException {
+		for (Object p : params) {
+			
+			if (p == null ) {
+				throw new IllegalArgumentException("null parameter");
+			}
+			if (p instanceof String) {
+				if (((String)p).length() == 0) {
+					throw new IllegalArgumentException("0 length paramter");
+				}
+			}
+		}
+		
+	}
 
 }
