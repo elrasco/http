@@ -33,7 +33,7 @@ public class MyUtils {
 			}
 		}
 		if (!check) {
-			throw new IllegalArgumentException("all parameters cant't be empty");
+			throw new OnlyOneException("all parameters cant't be empty");
 		}
 	}
 
@@ -41,11 +41,11 @@ public class MyUtils {
 		for (Object p : params) {
 			
 			if (p == null ) {
-				throw new NotEmptyException("null parameter");
+				throw new NotEmptyException("null parameter is not valid");
 			}
 			if (p instanceof String) {
 				if (((String)p).length() == 0) {
-					throw new NotEmptyException("0 length paramter");
+					throw new NotEmptyException("0 length paramter is not valid");
 				}
 			}
 		}
