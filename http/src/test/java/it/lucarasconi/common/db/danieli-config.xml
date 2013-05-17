@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="DEV">
+		<environment id="DEV">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@10.150.21.4:1521:ODB001"/>
+				<property name="username" value="DANIELI"/>
+				<property name="password" value="DANIELI"/>
+				<property name="poolMaximumActiveConnections" value="75"/>
+		        <property name="poolMaximumIdleConnections" value="25"/>
+		        <property name="poolPingEnabled" value="true"/>
+		        <property name="poolPingQuery" value="select * from dual"/>
+		        <property name="poolPingConnectionsNotUsedFor" value="120"/>
+			</dataSource>
+		</environment>
+		
+		<environment id="QA">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@kth120:1521:ORCL"/>
+				<property name="username" value="DANIELI"/>
+				<property name="password" value="DANIELI"/>
+				<property name="poolMaximumActiveConnections" value="75"/>
+		        <property name="poolMaximumIdleConnections" value="25"/>
+		        <property name="poolPingEnabled" value="true"/>
+		        <property name="poolPingQuery" value="select * from dual"/>
+		        <property name="poolPingConnectionsNotUsedFor" value="120"/>
+			</dataSource>
+		</environment>
+		<environment id="SQLSERVER">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+				<property name="url" value="jdbc:sqlserver://KTb105:1433;databaseName=DANIELI_EXPLORER"/>
+				<property name="username" value="sa"/>
+				<property name="password" value="pippo00"/>
+				<property name="poolMaximumActiveConnections" value="75"/>
+		        <property name="poolMaximumIdleConnections" value="25"/>
+		        <property name="poolPingConnectionsNotUsedFor" value="120"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<databaseIdProvider type="VENDOR">
+	    <property name="Oracle" value="oracle"/>
+  		<property name="SQL Server" value="sqlserver"/>
+	</databaseIdProvider>
+  	
+</configuration>
