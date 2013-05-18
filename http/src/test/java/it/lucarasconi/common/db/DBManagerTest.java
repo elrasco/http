@@ -2,6 +2,8 @@ package it.lucarasconi.common.db;
 
 import static org.junit.Assert.*;
 
+import it.lucarasconi.common.exception.DBInitException;
+
 import java.io.File;
 
 import org.apache.ibatis.session.SqlSession;
@@ -31,21 +33,17 @@ public class DBManagerTest {
 	}
 
 	@Test
-	public void testGet() {
+	public void testGet() throws DBInitException {
 		//inizializzo la sessione
-		SqlSessionFactory f1 = DBManager.get("EXPLORER").getSqlSessionFactory(new File("src/test/java/it/lucarasconi/common/db/danieli-config.xml"));
-		SqlSessionFactory f2 = DBManager.get("EXPLORER").getSqlSessionFactory(new File("src/test/java/it/lucarasconi/common/db/danieli-config.xml"));
-		SqlSessionFactory f3 = DBManager.get("TACS").getSqlSessionFactory(new File("src/test/java/it/lucarasconi/common/db/danieli-config.xml"));
+		DBManager.init("EXPLORER", "src/test/java/it/lucarasconi/common/db/danieli-config.xml");
+		DBManager.init("EXPLORER", "src/test/java/it/lucarasconi/common/db/danieli-config.xml");
+		DBManager.init("TACS", "src/test/java/it/lucarasconi/common/db/danieli-config.xml");
 		
 		SqlSession s1 = DBManager.getSession("EXPLORER");
-		SqlSession s2 = f1.openSession();
-		SqlSession s3 = f1.openSession();
+		SqlSession s2 = DBManager.getSession("EXPLORER");
+		SqlSession s3 = DBManager.getSession("EXPLORER");
 		
-		assertTrue(f1 == f2);
-		assertTrue(f1 != f3);
-		assertTrue(s1 != s2);
-		assertTrue(s2 != s3);
-		assertTrue(s1 != s3);
+		
 		
 		s1.close();
 		s2.close();
