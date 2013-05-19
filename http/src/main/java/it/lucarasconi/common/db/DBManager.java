@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 
 public class DBManager {
 	
-	static ConcurrentHashMap<String, MyBatisConnectionFactory> factories = new ConcurrentHashMap<>();
+	static ConcurrentHashMap<String, MyBatisConnectionFactory> factories = new ConcurrentHashMap<String, MyBatisConnectionFactory>();
 	static Object lock = new Object();
 
 	/**
