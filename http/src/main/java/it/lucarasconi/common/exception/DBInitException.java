@@ -8,10 +8,6 @@ public class DBInitException extends Exception {
 		super();
 	}
 
-	public DBInitException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
-
 	public DBInitException(String message, Throwable cause) {
 		super(message, cause);
 	}
