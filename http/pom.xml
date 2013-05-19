@@ -7,22 +7,22 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>http</name>
-  <url>http://maven.apache.org</url>
+  <name>my-commons</name>
+
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
-  <repositories>
-    <repository>
-      <id>oss-sonatype-snapshots</id>
-      <name>OSS Sonatype Snapshots Repository</name>
-	  <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>false</releases>
-      <snapshots>true</snapshots>
-    </repository>
-  </repositories> 
+<!--   <repositories> -->
+<!--     <repository> -->
+<!--       <id>oss-sonatype-snapshots</id> -->
+<!--       <name>OSS Sonatype Snapshots Repository</name> -->
+<!-- 	  <url>http://oss.sonatype.org/content/repositories/snapshots</url> -->
+<!--       <releases>false</releases> -->
+<!--       <snapshots>true</snapshots> -->
+<!--     </repository> -->
+<!--   </repositories>  -->
 
   <dependencies>
      
